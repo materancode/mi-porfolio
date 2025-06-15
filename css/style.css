@@ -1,0 +1,273 @@
+/* Reset y estilo general */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f2fdfb;
+    color: #333;
+}
+header {
+    position: relative;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden; /* para que el blur no sobresalga */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../images/tres.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(6px);
+    opacity: 1.4; /* ajusta según te guste */
+    z-index: 0;
+}
+
+header > * {
+    position: relative;
+    z-index: 1; /* para que el contenido esté por encima de la imagen difuminada */
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav .menu li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav .menu li a:hover {
+    color: #90e0ef;
+}
+
+.menu li a.active {
+    border-bottom: 2px solid #90e0ef;
+    padding-bottom: 0.2rem;
+}
+
+/* Sección hero */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #caf0f8, #ade8f4);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    background-color: #48cae4;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #00b4d8;
+}
+
+/* Características */
+.features {
+    position: relative; /* Para posicionar el pseudo-elemento */
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem 1rem;
+    background-color: #e0f7fa;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    overflow: hidden; /* Evitar que el difuminado se salga */
+}
+
+/* Pseudo-elemento para la imagen de fondo difuminada */
+.features::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../images/tres.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 1.10; /* Ajusta la opacidad para que sea sutil */
+    filter: blur(6px); /* Difuminado */
+    z-index: 0;
+}
+
+.features .feature h3 {
+    color: #f0f8ff; /* un azul muy claro, casi blanco */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* sombra para que destaque */
+}
+
+.features .feature p {
+    color: #dcefff; /* color claro suave */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+
+/* Contenido real debe estar por encima */
+.features > * {
+    position: relative;
+    z-index: 1;
+}
+
+.feature {
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Sección de habilidades */
+.skills {
+    padding: 3rem 2rem;
+    background-color: #f0fcff;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #0077b6;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.skill-group {
+    background-color: #ffffff;
+    border: 1px solid #d1f3f3;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 119, 182, 0.1);
+    transition: transform 0.3s;
+}
+
+.skill-group:hover {
+    transform: translateY(-5px);
+}
+
+.skill-group h3 {
+    color: #023e8a;
+    margin-bottom: 1rem;
+}
+
+.skill-group ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.skill-group ul li {
+    padding: 0.3rem 0;
+    color: #333;
+}
+
+/* Pie de página */
+footer {
+    position: relative;
+    background-color: #0077b6;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    overflow: hidden; /* Para que el blur no sobresalga */
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../images/tres.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(6px);
+    opacity: 1.4; /* Ajusta la opacidad a tu gusto */
+    z-index: 0;
+}
+
+footer > * {
+    position: relative;
+    z-index: 1; /* Para que el texto esté encima de la imagen */
+}
+
+/* Sección sobre mí */
+.about-section {
+    padding: 3rem 2rem;
+    background-color: #eaf9f8;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+.perfil {
+    width: 200px;
+  }
+}
+
+.about-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.about-text h1 {
+    color: #0077b6;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text h2 {
+    color: #023e8a;
+    margin-top: 1.5rem;
+}
+
+.about-text p {
+    line-height: 1.6;
+    color: #333;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
